@@ -102,10 +102,6 @@ extension ColorazerViewController: UITextFieldDelegate {
         view.endEditing(true)
     }
     
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-           textField.text = ""
-    }
-    
     private func textFieldDidEndEditing(_ textField: [UITextField]) {
         for (textField, slider) in zip(colorTextField, colorSliders) {
             guard let x = Float(textField.text ?? "0.00") else { return }
