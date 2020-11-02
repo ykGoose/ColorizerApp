@@ -7,9 +7,11 @@ protocol BackgroundColorDelegate {
 
 class BackgroundViewController: UIViewController {
     
+    // MARK: - IBOutlet
     @IBOutlet var backgroundView: UIView!
     
     
+    // MARK: - Navigations
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let colorazerVC = segue.destination as! ColorazerViewController
         colorazerVC.delegate = self
@@ -17,6 +19,7 @@ class BackgroundViewController: UIViewController {
     }
 }
 
+// MARK: - Extensions
 extension BackgroundViewController: BackgroundColorDelegate {
     func colorTransfer(color: UIColor) {
         backgroundView.backgroundColor = color

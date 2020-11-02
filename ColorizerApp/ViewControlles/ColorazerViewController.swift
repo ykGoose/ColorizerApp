@@ -5,6 +5,7 @@ import SwiftUI
 
 class ColorazerViewController: UIViewController {
     
+    // MARK: - IBOutlet
     @IBOutlet weak var colorView: UIView!
     
     @IBOutlet weak var redLabel: UILabel!
@@ -15,9 +16,11 @@ class ColorazerViewController: UIViewController {
     @IBOutlet weak var greenSlider: UISlider!
     @IBOutlet weak var blueSlider: UISlider!
     
+    // MARK: - Public Properties
     var color: UIColor!
     var delegate: BackgroundColorDelegate!
     
+    // MARK: - Life Cycles Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -28,6 +31,7 @@ class ColorazerViewController: UIViewController {
         setValue(for: redLabel, greenLabel, blueLabel)
     }
     
+    // MARK: - IBActions
     @IBAction func rgbSlider(_ sender: UISlider) {
         setColor()
         
@@ -44,7 +48,7 @@ class ColorazerViewController: UIViewController {
         dismiss(animated: true)
     }
     
-    
+    // MARK: - Private Methods
     private func setColor() {
         colorView.backgroundColor = UIColor(red: CGFloat(redSlider.value),
                                             green: CGFloat(greenSlider.value),
