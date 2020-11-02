@@ -14,7 +14,6 @@
 		96B27E0B254EA3B30095FFE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96B27E0A254EA3B30095FFE9 /* Assets.xcassets */; };
 		96B27E0E254EA3B30095FFE9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96B27E0C254EA3B30095FFE9 /* LaunchScreen.storyboard */; };
 		96B27E1E254EA4EF0095FFE9 /* ColorazerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B27E1D254EA4EF0095FFE9 /* ColorazerViewController.swift */; };
-		96B27E26254EBFB70095FFE9 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B27E25254EBFB70095FFE9 /* Color.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +26,6 @@
 		96B27E0D254EA3B30095FFE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		96B27E0F254EA3B30095FFE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		96B27E1D254EA4EF0095FFE9 /* ColorazerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorazerViewController.swift; sourceTree = "<group>"; };
-		96B27E25254EBFB70095FFE9 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,7 +106,6 @@
 		96B27E24254EBF7B0095FFE9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				96B27E25254EBFB70095FFE9 /* Color.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -186,7 +183,6 @@
 				96B27E1E254EA4EF0095FFE9 /* ColorazerViewController.swift in Sources */,
 				96B27E06254EA3AF0095FFE9 /* BackgroundViewController.swift in Sources */,
 				96B27E02254EA3AF0095FFE9 /* AppDelegate.swift in Sources */,
-				96B27E26254EBFB70095FFE9 /* Color.swift in Sources */,
 				96B27E04254EA3AF0095FFE9 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

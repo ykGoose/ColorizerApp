@@ -3,7 +3,6 @@
 import SwiftUI
 
 
-
 class ColorazerViewController: UIViewController {
     
     @IBOutlet weak var colorView: UIView!
@@ -16,20 +15,15 @@ class ColorazerViewController: UIViewController {
     @IBOutlet weak var greenSlider: UISlider!
     @IBOutlet weak var blueSlider: UISlider!
     
-    var red: Float!
-    var green: Float!
-    var blue: Float!
+    var color: UIColor!
     var delegate: BackgroundColorDelegate!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        redSlider.value = red
-        greenSlider.value = green
-        blueSlider.value = blue
-        
         colorView.layer.cornerRadius = 15
         
+        getColors()
         setColor()
         setValue(for: redLabel, greenLabel, blueLabel)
     }
@@ -46,7 +40,7 @@ class ColorazerViewController: UIViewController {
     }
     
     @IBAction func doneButtonPressed() {
-        delegate.colorTransfer(red: redSlider.value, green: greenSlider.value, blue: blueSlider.value)
+        delegate.colorTransfer(color: colorView.backgroundColor ?? .black)
         dismiss(animated: true)
     }
     
@@ -69,7 +63,24 @@ class ColorazerViewController: UIViewController {
         }
     }
     
+    
     private func string(from slider: UISlider) -> String {
         String(format: "%.2f", slider.value)
     }
+    
+    private func getColors() {
+        var red: CGFloat = 0
+        var green: CGFloat = 0
+        var blue: CGFloat = 0
+        var alpha: CGFloat = 0
+        
+        color.getRed(&red, green: &green, blue: &blue, alpha: &alpha)
+        redSlider.value = Float(red)
+        greenSlider.value = Float(green)
+        blueSlider.value = Float(blue)
+    }
+    
+    
 }
+
+
