@@ -41,7 +41,7 @@ class ColorazerViewController: UIViewController {
         var blue: CGFloat = 1
         
         for (label, slider) in zip(colorLabels, colorSliders) {
-            label.text = String(format: "%.2f", slider.value)
+            label.text = string(from: slider)
         }
         
         colorSliders.forEach { slider in
@@ -60,7 +60,7 @@ class ColorazerViewController: UIViewController {
     
     private func setValue() {
         for (label, slider) in zip(colorLabels, colorSliders) {
-            label.text = String(format: "%.2f", slider.value)
+            label.text = string(from: slider)
         }
     }
     
