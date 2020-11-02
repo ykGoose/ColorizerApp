@@ -1,5 +1,5 @@
 
-import SwiftUI
+import UIKit
 
 class ColorazerViewController: UIViewController {
     
@@ -91,22 +91,30 @@ class ColorazerViewController: UIViewController {
             }
         }
     }
-
+    
 }
 
+// MARK: - Extension Methods
 extension ColorazerViewController: UITextFieldDelegate {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
         textFieldDidEndEditing(colorTextField)
         view.endEditing(true)
     }
+
     private func textFieldDidEndEditing(_ textField: [UITextField]) {
         for (textField, slider) in zip(colorTextField, colorSliders) {
-            guard let x = Float(textField.text ?? "0.00") else {return}
-            slider.value = x
+            guard let x = Float(textField.text ?? "0.00") else { return }
+            if x > 1 {
+                textField.text = "1.00"
+                slider.value = 1.00
+            } else {
+                slider.value = x
+            }
             setColor()
             setValue()
         }
     }
 }
+
 
