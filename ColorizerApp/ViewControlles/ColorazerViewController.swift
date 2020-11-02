@@ -60,12 +60,23 @@ class ColorazerViewController: UIViewController {
     
     private func setValue() {
         for (label, slider) in zip(colorLabels, colorSliders) {
-            label.text = string(from: slider)
+            switch slider.tag {
+            case 0: label.text = string(from: slider)
+            case 1: label.text = string(from: slider)
+            case 2: label.text = string(from: slider)
+            default: break
+            }
         }
     }
     
     private func setTextField() {
         for (textField, slider) in zip(colorTextField, colorSliders) {
+            switch slider.tag {
+            case 0: textField.text = string(from: slider)
+            case 1: textField.text = string(from: slider)
+            case 2: textField.text = string(from: slider)
+            default: break
+            }
             textField.text = string(from: slider)
         }
     }
@@ -75,23 +86,17 @@ class ColorazerViewController: UIViewController {
     }
     
     private func getColors() {
-        var red: CGFloat = 1
-        var green: CGFloat = 1
-        var blue: CGFloat = 1
-        var alpha: CGFloat = 1
-        
-        color.getRed(&red, green: &green, blue: &blue, alpha: &alpha)
+        let ciColor = CIColor(color: color)
         
         colorSliders.forEach { slider in
             switch slider.tag {
-            case 0: slider.value = Float(red)
-            case 1: slider.value = Float(green)
-            case 2: slider.value = Float(blue)
+            case 0: slider.value = Float(ciColor.red)
+            case 1: slider.value = Float(ciColor.green)
+            case 2: slider.value = Float(ciColor.blue)
             default: break
             }
         }
     }
-    
 }
 
 // MARK: - Extension Methods
@@ -112,10 +117,11 @@ extension ColorazerViewController: UITextFieldDelegate {
                 textField.text = String(format: "%.2f", x)
                 slider.value = x
             }
+            for (label, slider) in zip(colorLabels, colorSliders) {
+                label.text = string(from: slider)
+            }
             setColor()
-            setValue()
         }
     }
 }
-
 

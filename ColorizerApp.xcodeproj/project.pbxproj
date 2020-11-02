@@ -61,7 +61,7 @@
 				96B27E24254EBF7B0095FFE9 /* Models */,
 				96B27E1B254EA41A0095FFE9 /* SupportionFiles */,
 				96B27E19254EA4080095FFE9 /* ViewControlles */,
-				96B27E18254EA3FF0095FFE9 /* Storuboards */,
+				96B27E18254EA3FF0095FFE9 /* Storyboards */,
 				96B27E17254EA3EE0095FFE9 /* Sources */,
 			);
 			path = ColorizerApp;
@@ -75,13 +75,13 @@
 			path = Sources;
 			sourceTree = "<group>";
 		};
-		96B27E18254EA3FF0095FFE9 /* Storuboards */ = {
+		96B27E18254EA3FF0095FFE9 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
 				96B27E07254EA3AF0095FFE9 /* Main.storyboard */,
 				96B27E0C254EA3B30095FFE9 /* LaunchScreen.storyboard */,
 			);
-			path = Storuboards;
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 		96B27E19254EA4080095FFE9 /* ViewControlles */ = {
