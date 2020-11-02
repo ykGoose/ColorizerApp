@@ -7,6 +7,8 @@ class ColorazerViewController: UIViewController {
     @IBOutlet weak var colorView: UIView!
     @IBOutlet var colorLabels: [UILabel]!
     @IBOutlet var colorSliders: [UISlider]!
+    @IBOutlet var colorTextField: [UITextField]!
+    
     
     // MARK: - Public Properties
     var color: UIColor!
@@ -21,12 +23,14 @@ class ColorazerViewController: UIViewController {
         getColors()
         setColor()
         setValue()
+        setTextField()
     }
     
     // MARK: - IBActions
     @IBAction func rgbSlider(_ sender: UISlider) {
         setColor()
         setValue()
+        setTextField()
     }
     
     @IBAction func doneButtonPressed() {
@@ -60,6 +64,12 @@ class ColorazerViewController: UIViewController {
         }
     }
     
+    private func setTextField() {
+        for (textField, slider) in zip(colorTextField, colorSliders) {
+            textField.text = string(from: slider)
+        }
+    }
+    
     private func string(from slider: UISlider) -> String {
         String(format: "%.2f", slider.value)
     }
@@ -81,6 +91,22 @@ class ColorazerViewController: UIViewController {
             }
         }
     }
-    
+
+}
+
+extension ColorazerViewController: UITextFieldDelegate {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        textFieldDidEndEditing(colorTextField)
+        view.endEditing(true)
+    }
+    private func textFieldDidEndEditing(_ textField: [UITextField]) {
+        for (textField, slider) in zip(colorTextField, colorSliders) {
+            guard let x = Float(textField.text ?? "0.00") else {return}
+            slider.value = x
+            setColor()
+            setValue()
+        }
+    }
 }
 
