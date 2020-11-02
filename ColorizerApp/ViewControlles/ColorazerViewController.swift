@@ -40,10 +40,6 @@ class ColorazerViewController: UIViewController {
         var green: CGFloat = 1
         var blue: CGFloat = 1
         
-        for (label, slider) in zip(colorLabels, colorSliders) {
-            label.text = string(from: slider)
-        }
-        
         colorSliders.forEach { slider in
             switch slider.tag {
             case 0: red = CGFloat(slider.value)
@@ -85,5 +81,6 @@ class ColorazerViewController: UIViewController {
             }
         }
     }
+    
 }
 
