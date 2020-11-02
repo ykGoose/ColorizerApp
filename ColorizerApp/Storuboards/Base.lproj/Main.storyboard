@@ -159,13 +159,13 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="blueLabel" destination="J8X-MT-gVL" id="avr-kF-awR"/>
-                        <outlet property="blueSlider" destination="ohz-A1-jtB" id="Dgz-Ch-M2U"/>
                         <outlet property="colorView" destination="4SU-w8-Qgx" id="IOP-3e-blk"/>
-                        <outlet property="greenLabel" destination="7SR-oT-Spn" id="Iji-0U-3eQ"/>
-                        <outlet property="greenSlider" destination="27G-N0-jVD" id="Txb-QD-f2g"/>
-                        <outlet property="redLabel" destination="qdk-39-eAl" id="BBb-ke-2lw"/>
-                        <outlet property="redSlider" destination="nWz-tY-AuZ" id="qv0-bY-o0b"/>
+                        <outletCollection property="colorLabels" destination="qdk-39-eAl" collectionClass="NSMutableArray" id="x9t-7s-jjq"/>
+                        <outletCollection property="colorLabels" destination="7SR-oT-Spn" collectionClass="NSMutableArray" id="Hfy-pd-31c"/>
+                        <outletCollection property="colorLabels" destination="J8X-MT-gVL" collectionClass="NSMutableArray" id="LhT-6d-ZaX"/>
+                        <outletCollection property="colorSliders" destination="nWz-tY-AuZ" collectionClass="NSMutableArray" id="FBe-FL-56X"/>
+                        <outletCollection property="colorSliders" destination="27G-N0-jVD" collectionClass="NSMutableArray" id="dLc-LV-fBo"/>
+                        <outletCollection property="colorSliders" destination="ohz-A1-jtB" collectionClass="NSMutableArray" id="hDA-Sb-Y5i"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0xn-Xh-EDK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

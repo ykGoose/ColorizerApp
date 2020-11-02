@@ -10,7 +10,6 @@ class BackgroundViewController: UIViewController {
     // MARK: - IBOutlet
     @IBOutlet var backgroundView: UIView!
     
-    
     // MARK: - Navigations
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let colorazerVC = segue.destination as! ColorazerViewController

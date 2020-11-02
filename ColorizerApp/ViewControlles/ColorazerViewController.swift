@@ -1,20 +1,12 @@
 
-
 import SwiftUI
-
 
 class ColorazerViewController: UIViewController {
     
     // MARK: - IBOutlet
     @IBOutlet weak var colorView: UIView!
-    
-    @IBOutlet weak var redLabel: UILabel!
-    @IBOutlet weak var greenLabel: UILabel!
-    @IBOutlet weak var blueLabel: UILabel!
-    
-    @IBOutlet weak var redSlider: UISlider!
-    @IBOutlet weak var greenSlider: UISlider!
-    @IBOutlet weak var blueSlider: UISlider!
+    @IBOutlet var colorLabels: [UILabel]!
+    @IBOutlet var colorSliders: [UISlider]!
     
     // MARK: - Public Properties
     var color: UIColor!
@@ -28,19 +20,13 @@ class ColorazerViewController: UIViewController {
         
         getColors()
         setColor()
-        setValue(for: redLabel, greenLabel, blueLabel)
+        setValue()
     }
     
     // MARK: - IBActions
     @IBAction func rgbSlider(_ sender: UISlider) {
         setColor()
-        
-        switch sender.tag {
-        case 0: redLabel.text = string(from: sender)
-        case 1: greenLabel.text = string(from: sender)
-        case 2: blueLabel.text = string(from: sender)
-        default: break
-        }
+        setValue()
     }
     
     @IBAction func doneButtonPressed() {
@@ -50,41 +36,54 @@ class ColorazerViewController: UIViewController {
     
     // MARK: - Private Methods
     private func setColor() {
-        colorView.backgroundColor = UIColor(red: CGFloat(redSlider.value),
-                                            green: CGFloat(greenSlider.value),
-                                            blue: CGFloat(blueSlider.value),
-                                            alpha: 1)
-    }
-    
-    private func setValue(for labels: UILabel...) {
-        labels.forEach { label in
-            switch label.tag {
-            case 0: redLabel.text = string(from: redSlider)
-            case 1: greenLabel.text = string(from: greenSlider)
-            case 2: blueLabel.text = string(from: blueSlider)
+        var red: CGFloat = 1
+        var green: CGFloat = 1
+        var blue: CGFloat = 1
+        
+        for (label, slider) in zip(colorLabels, colorSliders) {
+            label.text = String(format: "%.2f", slider.value)
+        }
+        
+        colorSliders.forEach { slider in
+            switch slider.tag {
+            case 0: red = CGFloat(slider.value)
+            case 1: green = CGFloat(slider.value)
+            case 2: blue = CGFloat(slider.value)
             default: break
             }
+            colorView.backgroundColor = UIColor(red: CGFloat(red),
+                                                green: CGFloat(green),
+                                                blue: CGFloat(blue),
+                                                alpha: 1)
         }
     }
     
+    private func setValue() {
+        for (label, slider) in zip(colorLabels, colorSliders) {
+            label.text = String(format: "%.2f", slider.value)
+        }
+    }
     
     private func string(from slider: UISlider) -> String {
         String(format: "%.2f", slider.value)
     }
     
     private func getColors() {
-        var red: CGFloat = 0
-        var green: CGFloat = 0
-        var blue: CGFloat = 0
-        var alpha: CGFloat = 0
+        var red: CGFloat = 1
+        var green: CGFloat = 1
+        var blue: CGFloat = 1
+        var alpha: CGFloat = 1
         
         color.getRed(&red, green: &green, blue: &blue, alpha: &alpha)
-        redSlider.value = Float(red)
-        greenSlider.value = Float(green)
-        blueSlider.value = Float(blue)
+        
+        colorSliders.forEach { slider in
+            switch slider.tag {
+            case 0: slider.value = Float(red)
+            case 1: slider.value = Float(green)
+            case 2: slider.value = Float(blue)
+            default: break
+            }
+        }
     }
-    
-    
 }
-
 
