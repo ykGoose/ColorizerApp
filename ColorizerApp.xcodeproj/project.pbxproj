@@ -9,21 +9,25 @@
 /* Begin PBXBuildFile section */
 		96B27E02254EA3AF0095FFE9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B27E01254EA3AF0095FFE9 /* AppDelegate.swift */; };
 		96B27E04254EA3AF0095FFE9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B27E03254EA3AF0095FFE9 /* SceneDelegate.swift */; };
-		96B27E06254EA3AF0095FFE9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B27E05254EA3AF0095FFE9 /* ViewController.swift */; };
+		96B27E06254EA3AF0095FFE9 /* BackgroundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B27E05254EA3AF0095FFE9 /* BackgroundViewController.swift */; };
 		96B27E09254EA3AF0095FFE9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96B27E07254EA3AF0095FFE9 /* Main.storyboard */; };
 		96B27E0B254EA3B30095FFE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96B27E0A254EA3B30095FFE9 /* Assets.xcassets */; };
 		96B27E0E254EA3B30095FFE9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96B27E0C254EA3B30095FFE9 /* LaunchScreen.storyboard */; };
+		96B27E1E254EA4EF0095FFE9 /* ColorazerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B27E1D254EA4EF0095FFE9 /* ColorazerViewController.swift */; };
+		96B27E26254EBFB70095FFE9 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B27E25254EBFB70095FFE9 /* Color.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		96B27DFE254EA3AF0095FFE9 /* ColorizerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColorizerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96B27E01254EA3AF0095FFE9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		96B27E03254EA3AF0095FFE9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		96B27E05254EA3AF0095FFE9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		96B27E05254EA3AF0095FFE9 /* BackgroundViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundViewController.swift; sourceTree = "<group>"; };
 		96B27E08254EA3AF0095FFE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		96B27E0A254EA3B30095FFE9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		96B27E0D254EA3B30095FFE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		96B27E0F254EA3B30095FFE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		96B27E1D254EA4EF0095FFE9 /* ColorazerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorazerViewController.swift; sourceTree = "<group>"; };
+		96B27E25254EBFB70095FFE9 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +60,57 @@
 		96B27E00254EA3AF0095FFE9 /* ColorizerApp */ = {
 			isa = PBXGroup;
 			children = (
-				96B27E01254EA3AF0095FFE9 /* AppDelegate.swift */,
-				96B27E03254EA3AF0095FFE9 /* SceneDelegate.swift */,
-				96B27E05254EA3AF0095FFE9 /* ViewController.swift */,
-				96B27E07254EA3AF0095FFE9 /* Main.storyboard */,
-				96B27E0A254EA3B30095FFE9 /* Assets.xcassets */,
-				96B27E0C254EA3B30095FFE9 /* LaunchScreen.storyboard */,
-				96B27E0F254EA3B30095FFE9 /* Info.plist */,
+				96B27E24254EBF7B0095FFE9 /* Models */,
+				96B27E1B254EA41A0095FFE9 /* SupportionFiles */,
+				96B27E19254EA4080095FFE9 /* ViewControlles */,
+				96B27E18254EA3FF0095FFE9 /* Storuboards */,
+				96B27E17254EA3EE0095FFE9 /* Sources */,
 			);
 			path = ColorizerApp;
+			sourceTree = "<group>";
+		};
+		96B27E17254EA3EE0095FFE9 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				96B27E0A254EA3B30095FFE9 /* Assets.xcassets */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		96B27E18254EA3FF0095FFE9 /* Storuboards */ = {
+			isa = PBXGroup;
+			children = (
+				96B27E07254EA3AF0095FFE9 /* Main.storyboard */,
+				96B27E0C254EA3B30095FFE9 /* LaunchScreen.storyboard */,
+			);
+			path = Storuboards;
+			sourceTree = "<group>";
+		};
+		96B27E19254EA4080095FFE9 /* ViewControlles */ = {
+			isa = PBXGroup;
+			children = (
+				96B27E1D254EA4EF0095FFE9 /* ColorazerViewController.swift */,
+				96B27E05254EA3AF0095FFE9 /* BackgroundViewController.swift */,
+			);
+			path = ViewControlles;
+			sourceTree = "<group>";
+		};
+		96B27E1B254EA41A0095FFE9 /* SupportionFiles */ = {
+			isa = PBXGroup;
+			children = (
+				96B27E01254EA3AF0095FFE9 /* AppDelegate.swift */,
+				96B27E03254EA3AF0095FFE9 /* SceneDelegate.swift */,
+				96B27E0F254EA3B30095FFE9 /* Info.plist */,
+			);
+			path = SupportionFiles;
+			sourceTree = "<group>";
+		};
+		96B27E24254EBF7B0095FFE9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				96B27E25254EBFB70095FFE9 /* Color.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +183,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				96B27E06254EA3AF0095FFE9 /* ViewController.swift in Sources */,
+				96B27E1E254EA4EF0095FFE9 /* ColorazerViewController.swift in Sources */,
+				96B27E06254EA3AF0095FFE9 /* BackgroundViewController.swift in Sources */,
 				96B27E02254EA3AF0095FFE9 /* AppDelegate.swift in Sources */,
+				96B27E26254EBFB70095FFE9 /* Color.swift in Sources */,
 				96B27E04254EA3AF0095FFE9 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -288,7 +336,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3B53AU5N2F;
-				INFOPLIST_FILE = ColorizerApp/Info.plist;
+				INFOPLIST_FILE = ColorizerApp/SupportionFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -296,7 +344,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ru.swiftbook.ColorizerApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -307,7 +355,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3B53AU5N2F;
-				INFOPLIST_FILE = ColorizerApp/Info.plist;
+				INFOPLIST_FILE = ColorizerApp/SupportionFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -315,7 +363,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ru.swiftbook.ColorizerApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
